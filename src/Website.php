@@ -53,7 +53,7 @@ class Website
 
 		curl_close($ch);
 
-		$this->loadTime = $info['total_time'] * 1000;
+		$this->loadTime = ($info['starttransfer_time'] - $info['pretransfer_time']) * 1000;
 	}
 	
 	/**
